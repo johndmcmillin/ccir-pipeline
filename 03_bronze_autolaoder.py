@@ -11,6 +11,24 @@ RAW_PATH       = "/Volumes/ccir_workspace/default/ccir_raw/"
 BRONZE_TABLE   = "ccir_workspace.default.bronze_compute_pricing"
 CHECKPOINT_DIR = "/Volumes/ccir_workspace/default/ccir_checkpoints/bronze/"
 
+from pyspark.sql.types import *
+
+bronze_schema = StructType([
+    StructField("provider",       StringType(), True),
+    StructField("instance_type",  StringType(), True),
+    StructField("product_name",   StringType(), True),
+    StructField("gpu_type",       StringType(), True),
+    StructField("gpu_count",      StringType(), True),
+    StructField("vcpu",           StringType(), True),
+    StructField("memory_gb",      StringType(), True),
+    StructField("region",         StringType(), True),
+    StructField("price_per_hour", DoubleType(),  True),
+    StructField("price_type",     StringType(), True),
+    StructField("currency",       StringType(), True),
+    StructField("ccir_tier",      StringType(), True),
+    StructField("raw_payload",    StringType(), True),
+])
+
 # ── Schema ───────────────────────────────────────────────────────────────────
 # Define explicitly so Autoloader doesn't have to infer on every run
 df_raw = (
