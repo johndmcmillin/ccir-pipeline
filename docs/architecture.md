@@ -4,7 +4,7 @@
 
 ### Tier Classification
 
-The central premise of this project is that GPU compute is not a homogeneous commodity. The same physical hardware — an A100, for instance — commands different prices depending on the workload it is being procured for, because the supply and demand dynamics of each use case are structurally different.
+The central premise of this project is that GPU compute is not a homogeneous commodity. Cloud providers offer distinct hardware tiers that map to different workload classes — training, fine-tuning, and inference — and the pricing of those tiers reflects structurally different supply and demand dynamics. This project asks whether those differences are quantifiable, whether they are consistent across providers, and whether the market is pricing them efficiently.
 
 Three tiers were defined based on the dominant GPU hardware associated with each workload class:
 
